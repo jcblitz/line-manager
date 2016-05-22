@@ -1,0 +1,15 @@
+require "rails_helper"
+
+RSpec.describe Line::ShoeLine do
+  describe '#for?' do
+    it "returns true for people wearing shoes" do
+      person = Person.new("shoe guy", true, false)
+      expect(Line::ShoeLine.for?(person)).to eq(true)
+    end
+
+    it "returns false for people not wearing shoe" do
+      person = Person.new("shoe guy", false, true)
+      expect(Line::ShoeLine.for?(person)).to eq(false)
+    end
+  end
+end
