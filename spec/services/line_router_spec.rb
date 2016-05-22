@@ -11,13 +11,13 @@ RSpec.describe LineRouter do
   describe '#direct' do 
     context 'when eligible for only one line' do
       it 'directs a hat person to the hat line' do
-        person = Person.new('hat guy', false, true)
+        person = Person.new(name: 'hat guy', shoes: false, hat: true)
         line = router.direct(person)
         expect(line).to eq (Line::HatLine)
       end
 
       it 'directs a shoes person to the shoes line' do
-        person = Person.new('hat guy', true, false)
+        person = Person.new(name: 'hat guy', shoes: true, hat: false)
         line = router.direct(person)
         expect(line).to eq (Line::ShoeLine)
       end
@@ -25,7 +25,7 @@ RSpec.describe LineRouter do
 
     context 'when eligible for more than one line' do
       it 'directs to the first eligible line' do
-        person = Person.new('hat and shoe guy', true, true)
+        person = Person.new(name: 'hat and shoe guy', shoes: true, hat: true)
         line = router.direct(person)
         expect(line).to eq (router.lines.first)
       end
