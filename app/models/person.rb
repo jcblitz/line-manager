@@ -4,8 +4,8 @@ class Person
     alias :hat? :hat
 
     def initialize(name, shoes, hat)
-        @name = name
-        @shoes = shoes
-        @hat = hat
+      @name = name
+      @shoes = shoes
+      @hat = hat
     end
 end
