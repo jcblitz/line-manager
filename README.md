@@ -32,10 +32,12 @@ I chose the `fallback` route and have a `Line::DefaultLine` that returns true fo
 
 ### What if lines need to close?
 
-The code should be updated to use a `scope` to only consider lines that are available.
+The code should be updated to use a `scope` to only consider lines that are available based on an `available` attribute
 
 ## Anything else of note?
 
 The `Line::LineType` classes use [Single Table Inheritance](https://en.wikipedia.org/wiki/Single_Table_Inheritance) and extend the `Line` class since all lines are fundamentally the same from a data standpoint given the requirements but have different criteria that can be encapsulated in the class itself
 
-If a person does not want to give their name, I assign a randomly generated name to them, making all fields optional.
+If a person does not want to give their name, a randomly generated name is assigned to them, making all fields optional.
+
+100% code coverage (verified by SimpleCov)
