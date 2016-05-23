@@ -1,4 +1,4 @@
-class Line::HatLine
+class Line::HatLine < Line
   def self.for?(person)
     person.hat?
   end
