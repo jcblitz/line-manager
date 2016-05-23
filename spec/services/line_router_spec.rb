@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe LineRouter do
   let(:router) { LineRouter.new }
   describe '#initialize' do
-    it 'has two default line types' do
-      expect(router.lines.count).to eq(2)      
+    it 'has a default line at the end of the chain' do
+      expect(router.lines.last.name).to eq('Line::DefaultLine')      
     end    
   end
 

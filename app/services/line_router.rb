@@ -2,7 +2,7 @@ class LineRouter
   attr_reader :lines
 
   # the default could also be `Line.select(:type).distinct` so every line available would initialize
-  def initialize(lines = [Line::HatLine, Line::ShoeLine])
+  def initialize(lines = [Line::HatLine, Line::ShoeLine, Line::DefaultLine])
     @lines = lines
   end
 
