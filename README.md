@@ -15,3 +15,21 @@ def self.for?(person)
   person.some_criteria?
 end
 ```
+
+This is then utilized by the `line_router` who's job it is to find an eligible line for a person. This is done by iterating over the list of available lines and finding the first line that a person is eligible to be in, returning that line (or at least a pointer to that line)
+
+There are a number of key factors (business decisions / requirements really) that dictate how the code should operate, but the general design stays the same:
+
+### What should happen if a person is eligible to be in more than one line?
+
+The code should be updated to return an array of eligible lines, then there would either be some type of `context_comparator` that could be used to determine which line is the best suited for that person 
+
+Another option could be to route them to the line with the least number of people already in it for the lines they're eligible for
+
+### What should happen if they're not eligible to be in any line?
+
+I chose the `fallback` route and have a `Line::DefaultLine` that returns true for every case 
+
+### What if lines need to close?
+
+The code should be updated to use a `scope` to only consider lines that are available 
