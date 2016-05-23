@@ -35,3 +35,17 @@
   
   <%= f.submit(class: 'btn btn-primary') %>
 <% end %>
+
+<% @lines.each do |line| %>
+
+  <div class="col-md-6 col-sm-12">
+    <h3><%= line.name %></h3>
+
+    <ol>
+    <% line.people.each do |person| %>
+      <li><%= person['name'] %></li>
+    <% end %>
+    </ol>
+  </div>
+
+<% end %>
