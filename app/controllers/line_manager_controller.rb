@@ -6,6 +6,8 @@ class LineManagerController < ApplicationController
 
   def route
     person = Person.new(params[:person])
+    person.name = Faker::Name.name if person.name.empty?
+
     rp = RoutePerson.new
     rp.call(person)
     redirect_to line_manager_path
