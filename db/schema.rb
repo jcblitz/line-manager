@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522231519) do
+ActiveRecord::Schema.define(version: 20160523114342) do
 
   create_table "lines", force: :cascade do |t|
     t.string   "type",       limit: 255
@@ -20,5 +20,7 @@ ActiveRecord::Schema.define(version: 20160522231519) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
+
+  add_index "lines", ["type"], name: "index_lines_on_type", using: :btree
 
 end

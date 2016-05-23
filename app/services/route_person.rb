@@ -16,8 +16,7 @@ class RoutePerson
   def line_factory(person)
     line_class = @router.direct(person)
 
-    # using the database as the queuing mechanism. In this model, there is only ever one of each type
-    # so it is the first one
-    line_class.first
+    # using the database as the queuing mechanism. type is an index and by convention, the name of the class
+    Line.find_by_type(line_class.name)
   end
 end
