@@ -1,2 +1,1 @@
 brew "mysql"
-brew "redis"
