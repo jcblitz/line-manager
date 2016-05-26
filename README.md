@@ -6,11 +6,12 @@ It is a small rails app used to route people to their appropriate line based on 
 
 ## Business Requirements 
 
+* There should always be at least 1 Line
 * A Person can only be in 1 Line
 * A Person should always be accepted into a line (i.e. No 'Cannot find a Line for this Person' exceptions)
 * A Person should be routed to the first Line they are eligible to be in
 * Line routing is a a deterministic process
-* All Line routing criteria is encapulsated to the Person
+* All Line routing criteria is encapsulated to the Person
 * Creating a new Line should not require modification to existing Lines
 
 ## Is there anything interesting about it?
