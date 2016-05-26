@@ -4,6 +4,15 @@
 
 It is a small rails app used to route people to their appropriate line based on certain eligibility requirements of the lines themselves. 
 
+## Business Requirements 
+
+# A Person can only be in 1 Line
+# A Person should always be accepted into a line (i.e. No 'Cannot find a line for this Person' exceptions)
+# A Person should be routed to the first Line they are eligible to be in
+# Line routing is a a deterministic process
+# All Line routing criteria is encapulsated to the Person
+# Creating a new Line should not require modification to existing Lines
+
 ## Is there anything interesting about it?
 
 The lines themselves contain the information on who is allowed to be in their line. There is an assumption that this information can solely be derived from the person themselves and is accessed through the `#for` method like so:
