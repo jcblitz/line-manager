@@ -3,6 +3,10 @@ require "rails_helper"
 RSpec.describe LineRouter do
   let(:router) { LineRouter.new }
   describe '#initialize' do
+    it 'raises an expection if there are no lines' do
+      expect { LineRouter.new(nil) }.to raise_error(ArgumentError)
+    end
+
     it 'has a default line at the end of the chain' do
       expect(router.lines.last.name).to eq('Line::DefaultLine')      
     end    
